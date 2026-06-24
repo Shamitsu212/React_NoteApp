@@ -62,6 +62,15 @@ function Aside_Notes() {
     dispatch(addNote(newNote))
   }
 
+    const folders = useSelector((state:RootState) => state.folders)
+    const folder = folders.folders.find((f) => f.id == Number(selected))
+
+    const title = selected === "All"
+      ? "Все заметки"
+      : selected === "favorite"
+      ? "Избранные"
+      : `Записи папки ${folder?.name}`
+
   return (
     <div className={styles.aside_notes}>
     
@@ -82,7 +91,7 @@ function Aside_Notes() {
 
     {sortedArr.length > 0 && (
     <div>
-      <h2>Записи</h2>
+      <h2>{title}</h2>
 
       <div className={styles.notes_list}>
 
