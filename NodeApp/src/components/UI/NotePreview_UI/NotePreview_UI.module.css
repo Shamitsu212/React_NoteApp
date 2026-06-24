@@ -3,6 +3,7 @@
     flex-direction: column;
 
     width: 420px;
+    height: 83px;
 
     padding: 5px;
 
@@ -16,6 +17,12 @@
     font-weight: 600;
 
     margin-bottom: 10px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    width: 340px;
 }
 .p{
     font-size: 18px;
@@ -23,4 +30,8 @@
 
     font-family: var(--font-main);
     font-weight: 400;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }

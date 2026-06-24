@@ -1,5 +1,6 @@
 import Aside from '../../layout/Aside/Aside'
 import Header from '../../layout/Header/Header'
+import AddNote from '../../layout/AddNote/AddNote'
 import styles from './Main_Page.module.css'
 
 function Main_Page() {
@@ -14,6 +15,8 @@ function Main_Page() {
 
       <div className={styles.Container_row}>
         <Aside/>
+
+        <AddNote />
       </div>
 
     </div>

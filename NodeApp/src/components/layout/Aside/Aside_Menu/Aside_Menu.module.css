@@ -20,6 +20,11 @@
     gap: 20px;
 }
 .asideMenu_folders{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.folders_h{
     position: relative;
 
     display: flex;
@@ -32,4 +37,19 @@
 .folders__button{
     position: absolute;
     margin-left: 205px;
+}
+.folders_folder{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    gap: 5px;
+}
+.folders_folder button {
+    flex: 1;
+    min-width: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }

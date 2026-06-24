@@ -6,20 +6,20 @@ interface ContextProps {
     setSelected: React.Dispatch<SetStateAction<string>>
 }
 
-export const SelectedContext = createContext<ContextProps | null>(null)
+export const SelectedFolderContext = createContext<ContextProps | null>(null)
 
 interface ProviderProps {
     children: ReactNode
 }
 
-export function SelectedProvider({children}:ProviderProps){
+export function SelectedFolderProvider({children}:ProviderProps){
 
     const [selected, setSelected] = useState<string>("All")
 
     return(
 
-        <SelectedContext.Provider value={{selected, setSelected}}>
+        <SelectedFolderContext.Provider value={{selected, setSelected}}>
             {children}
-        </SelectedContext.Provider>
+        </SelectedFolderContext.Provider>
     )
 } 

@@ -24,9 +24,8 @@ function Header() {
         Notes
 
       </div>
-
-
-        <Search_UI string={search} setString={setSearch}/>
+      
+      <Search_UI string={search} setString={setSearch}/>
 
 
     </header>

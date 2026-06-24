@@ -7,17 +7,18 @@ interface Props {
     string: string,
     setString: React.Dispatch<SetStateAction<string>>,
 
-    placeholder: string
+    placeholder: string,
+    isNote?: string ,
 }
 
-function Input_UI({string, setString, placeholder}:Props) {
+function Input_UI({string, setString, placeholder, isNote}:Props) {
 
   return (
     <input 
-        className={styles.input} 
+        className={ isNote ? styles.input_note : styles.input} 
         value={string} 
         placeholder={placeholder} 
-        onChange={() => setString(string)}    
+        onChange={(e) => setString(e.target.value)}    
     />
   )
 }

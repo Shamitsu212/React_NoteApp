@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 interface Note{
 
@@ -8,6 +8,8 @@ interface Note{
     name: string,
     text: string,
 
+    Pinned: boolean,
+    Favorite: boolean
 }
 
 interface NotesState{
@@ -25,16 +27,29 @@ const NotesSlice = createSlice({
     initialState,
 
     reducers: {
-        setNotes(){},
+        setNotes(state, action:PayloadAction<NotesState>){
+            state.notes = action.payload.notes
+        },
 
-        addNotes(){},
+        addNote(state, action:PayloadAction<Note>){
+            state.notes.push(action.payload)
+        },
+
+        pinNote(){},
         removeNotes(){},
 
-        editNote(){},
-        changeNote(){},
+
+        editNote(state, action: PayloadAction<Note>) {
+          const note = state.notes.find(n => n.id === action.payload.id)
+      
+          if (note) {
+            Object.assign(note, action.payload)
+          }
+        }
+        
     }
 
 })
 
-export const { setNotes, addNotes, removeNotes, editNote, changeNote } = NotesSlice.actions
+export const { setNotes, addNote, removeNotes, editNote,  } = NotesSlice.actions
 export default NotesSlice.reducer

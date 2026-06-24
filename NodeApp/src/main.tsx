@@ -8,7 +8,8 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from "react-redux"
 import { store } from './store/store.ts'
 import { SearchProvider } from './context/SearchContext.tsx'
-import { SelectedProvider } from './context/SelectedContext.tsx'
+import { SelectedFolderProvider } from './context/SelectedFolderContext.tsx'
+import { SelectedNoteProvider } from './context/SelectedNoteContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
 
@@ -16,13 +17,15 @@ createRoot(document.getElementById('root')!).render(
 
     <BrowserRouter>
 
-      <SelectedProvider>
+      <SelectedFolderProvider>
+      <SelectedNoteProvider>
       <SearchProvider>
       <ThemeProvider>
         <App />
       </ThemeProvider>
       </SearchProvider>
-      </SelectedProvider>
+      </SelectedNoteProvider>
+      </SelectedFolderProvider>
 
     </BrowserRouter>
 

@@ -17,7 +17,7 @@ function TextArea_UI({string, setString, placeholder}:Props) {
         className={styles.input} 
         value={string} 
         placeholder={placeholder} 
-        onChange={() => setString(string)}    
+        onChange={(e) => setString(e.target.value)}    
     />
   )
 }

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 interface Folder{
     id: number,
@@ -20,12 +20,26 @@ const ProjectSlice = createSlice({
     initialState,
 
     reducers: {
-        setProjects(){},
+        setProjects(state, action:PayloadAction<FoldersState>){
+            state.folders = action.payload.folders
+        },
 
-        addProjects(){},
-        removeProject(){},
+        addProjects(state, action:PayloadAction<Folder>){
+            state.folders.push(action.payload)
+        },
 
-        changeProject(){},
+        removeProject(state, action:PayloadAction<number>){
+            state.folders = state.folders.filter((f) => f.id != action.payload)
+        },
+
+        changeProject(state, action:PayloadAction<Folder>){
+            const find = state.folders.find((f) => f.id == action.payload.id)
+
+            if(find){
+                Object.assign(find, action.payload)
+            }
+
+        },
     }
 
 })

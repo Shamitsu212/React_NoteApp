@@ -4,21 +4,22 @@ import { useSelector } from 'react-redux'
 import type { RootState } from '../../../../store/store'
 import Button_UI from '../../../UI/Button_UI/Button_UI'
 import { FolderIcon, NotebookPenIcon, StarIcon } from 'lucide-react'
-import { useContext } from 'react'
-import { SelectedContext } from '../../../../context/SelectedContext'
-import Link_UI from '../../../UI/Link_UI/Link_UI'
+import { useContext, useState } from 'react'
+import { SelectedFolderContext } from '../../../../context/SelectedFolderContext'
+import Modal_UI from '../../../UI/Modal_UI/Modal_UI'
 
 function Aside_Projects() {
 
   const folders = useSelector((state: RootState) => state.folders)
 
-  const context = useContext(SelectedContext)
 
+  const context = useContext(SelectedFolderContext)
   if(!context){
     throw new Error("Ошибка в контексте SelectedContext")
   }
-
   const {setSelected} = context
+
+  const [visible, setVisible] = useState("n")
 
 
   return (
@@ -35,27 +36,27 @@ function Aside_Projects() {
       </div>
 
 
-      <div>
+      <div className={styles.asideMenu_folders}>
         
-        <h3 className={styles.asideMenu_folders}>
+        <h3 className={styles.folders_h}>
           Папки 
           
           <div className={styles.folders__button}>
-            <Link_UI text='+' to='/add'/>
+            <Button_UI text='+' OnClick={setVisible} result='y'/>
           </div>
           
         </h3>
 
         {folders.folders.map((f) => (
-          <div>
-            <FolderIcon />
+          <div className={styles.folders_folder}>
+            <FolderIcon size={30}/>
             <Button_UI text={f.name} result={`${f.id}`} OnClick={setSelected}/>
           </div>
         ))}
 
       </div>
 
-      
+      <Modal_UI visible={visible} setVisible={setVisible}/>
 
     </div>
   )
