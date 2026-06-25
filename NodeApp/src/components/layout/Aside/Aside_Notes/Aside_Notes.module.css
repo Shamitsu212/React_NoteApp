@@ -10,6 +10,7 @@
     border-right: 1px solid var(--border);
 
     height: 100%;
+    width: 460px;
 }
 .notes_list{
 
