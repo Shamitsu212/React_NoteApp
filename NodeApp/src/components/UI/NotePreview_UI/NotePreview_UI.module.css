@@ -50,7 +50,7 @@
 }
 .buttonContainer_button{
     border: none;
-    background-color: var(--bg);
+    background-color: var(--bgSecond);
     color: var(--text);
 
 }

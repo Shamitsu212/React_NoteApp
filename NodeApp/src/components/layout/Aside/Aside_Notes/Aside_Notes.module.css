@@ -33,6 +33,12 @@
     flex-direction: row;
     align-items: center;
     gap: 15px;
+
+    background-color: var(--bgSecond);
+    
+    padding: 10px;
+
+    border-radius: 15px;
 }
 .aside_h{
     margin-bottom: 11px;
