@@ -8,6 +8,8 @@
     min-width: 0;
     min-height: 83px;
 
+    overflow: hidden;
+
     padding: 5px;
 
     box-sizing: border-box;
@@ -26,6 +28,8 @@
     font-family: var(--font-main);
     font-weight: 600;
 
+    padding-right: 80px;
+
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -37,9 +41,14 @@
     font-family: var(--font-main);
     font-weight: 400;
 
+    padding-right: 20px;
+
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
+    white-space: nowrap;
+
+    min-width: 0;
+    max-width: 100%;
 }
 
 .article_buttonContainer{
