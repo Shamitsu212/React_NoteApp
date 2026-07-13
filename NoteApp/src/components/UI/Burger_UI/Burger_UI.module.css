@@ -1,0 +1,23 @@
+.button{
+    border-radius: 50%;
+    border: none;
+
+    background-color: var(--bgSecond);
+
+    width: 60px;
+    height: 60px;
+
+    color: var(--text);
+}
+.button:hover{
+    cursor: pointer;
+}
+
+.button span{
+    display:inline-block;
+    transition:transform .3s ease;
+}
+
+.rotated{
+    transform:rotate(90deg);
+}

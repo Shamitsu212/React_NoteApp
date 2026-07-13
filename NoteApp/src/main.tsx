@@ -1,0 +1,38 @@
+import { createRoot } from 'react-dom/client'
+
+import './index.css'
+import "./assets/theme/theme.css"
+import './assets/font/font.css'
+
+import App from './App.tsx'
+
+
+import { Provider } from "react-redux"
+import { store } from './store/store.ts'
+
+import { SearchProvider } from './context/SearchContext.tsx'
+import { SelectedFolderProvider } from './context/SelectedFolderContext.tsx'
+import { SelectedNoteProvider } from './context/SelectedNoteContext.tsx'
+import { ThemeProvider } from './context/ThemeContext.tsx'
+import { BurgerProvider } from './context/BurgerContext.tsx'
+
+createRoot(document.getElementById('root')!).render(
+
+  <Provider store={store}>
+
+    
+      <BurgerProvider>
+      <SelectedFolderProvider>
+      <SelectedNoteProvider>
+      <SearchProvider>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+      </SearchProvider>
+      </SelectedNoteProvider>
+      </SelectedFolderProvider>
+      </BurgerProvider>
+    
+
+  </Provider>
+)

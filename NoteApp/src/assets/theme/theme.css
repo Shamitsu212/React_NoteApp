@@ -1,0 +1,15 @@
+:root {
+  --bg: #ffffff;
+  --bgSecond: #E7E7E7;
+  --card: #f8f8f8;
+  --text: #171717;
+  --border: #E7E7E7;
+}
+
+[data-theme="night"] {
+  --bg: #06080c;
+  --bgSecond: #1A1D22;
+  --card: #111722;
+  --text: #e5e7eb;
+  --border: #2A2F35;
+}

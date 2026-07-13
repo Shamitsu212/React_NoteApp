@@ -1,0 +1,33 @@
+.aside{
+    display: flex;
+    flex: 0 0 auto;
+    width: 660px;
+    height: 100%;
+}
+
+.aside__projects{
+    flex: 0 0 240px;
+}
+
+.aside__tasks{
+    flex: 0 0 420px;
+    display: flex;
+}
+
+@media (max-width:768px){
+
+    .aside{
+        width:100%;
+        flex:1;
+    }
+
+    .aside__projects{
+        flex:0 0 70px;
+    }
+
+    .aside__tasks{
+        flex:1;
+        min-width:0;
+    }
+
+}

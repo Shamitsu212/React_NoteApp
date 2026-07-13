@@ -1,0 +1,31 @@
+.button{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    border: none;
+    background-color: var(--bgSecond);
+
+    color: var(--text);
+    font-size: 24px;
+    font-family: var(--font-main);
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.hideText{
+    display: inline;
+}
+
+@media (max-width:768px){
+
+    .button{
+        gap: 5px;
+    }
+
+    .hideText{
+        display: none;
+    }
+
+}
