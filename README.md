@@ -1,6 +1,6 @@
-# 🎨 React Node приложение
+# 🎨 React Note приложение
 
-Веб-приложение на React + TypeScript с функционалом node приложения.
+Веб-приложение на React + TypeScript с функционалом note приложения.
 
 ---
 
@@ -13,4 +13,4 @@
 
 ## 🖼️ Превью pet проекта
 
-Ссылка - https://shamitsu212.github.io/React_NodeApp/
+Ссылка - https://shamitsu212.github.io/React_NoteApp/
